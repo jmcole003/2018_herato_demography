@@ -20,7 +20,7 @@ import models2
 
 
 #Load in data SFS
-data = dadi.Spectrum.from_file('file_name.sfs')
+data = dadi.Spectrum.from_file('file_name.sfs'  pop_ids =['BeL','BeS'])
 ns=[15,15]
 
 #Grid points
@@ -81,3 +81,9 @@ print('Optimized log likelihood: {0}'.format(ll_opt))
 print('Optimized theta: {0}'.format(theta))
 print('AIC: {0}'.format(AIC))
 print('Best-fit parameters: {0}'.format(optim))
+
+#Plot Model Comparison
+pylab.figure(1)
+dadi.Plotting.plot_2d_comp_multinom(model, fs_obs, vmin=1, resid_range=3,
+                                    pop_ids =('Pop1','Pop2'))
+pylab.show()
