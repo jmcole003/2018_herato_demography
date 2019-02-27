@@ -20,7 +20,7 @@ import models2
 
 
 #Load in data SFS
-data = dadi.Spectrum.from_file('file_name.sfs'  pop_ids =['BeL','BeS'])
+data = dadi.Spectrum.from_file('file_name.sfs')
 ns=[15,15]
 
 #Grid points
